@@ -1,0 +1,53 @@
+﻿@model ProjetoAula_26_12_2022.Models.Produto
+
+@{
+    ViewData["Title"] = "Cadastrar Produto";
+}
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descricao" class="control-label"></label>
+                <input asp-for="Descricao" class="form-control" />
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataEntrada" class="control-label"></label>
+                <input asp-for="DataEntrada" class="form-control" type="date"/>
+                <span asp-validation-for="DataEntrada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataValidade" class="control-label"></label>
+                <input asp-for="DataValidade" class="form-control" type="date"/>
+                <span asp-validation-for="DataValidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QtdEstoque" class="control-label"></label>
+                <input asp-for="QtdEstoque" class="form-control" />
+                <span asp-validation-for="QtdEstoque" class="text-danger"></span>
+            </div>
+            <br/>
+              <div class="row">
+                <div class="col-md-2 form-group">
+                    <input type="submit" value="Salvar" class="btn btn-success" />
+                </div>
+                <div class="col-md-2 form-group">
+                    <a asp-action="Index" class="btn btn-warning">Voltar</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

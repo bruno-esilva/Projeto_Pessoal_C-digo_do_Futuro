@@ -1,0 +1,54 @@
+﻿@model ProjetoAula_26_12_2022.Models.Produto
+
+@{
+    ViewData["Title"] = "Visualizar Produto";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Nome
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            Descrição
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+        <dt class = "col-sm-2">
+            Data de Entrada
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataEntrada)
+        </dd>
+        <dt class = "col-sm-2">
+            Validade
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataValidade)
+        </dd>
+        <dt class = "col-sm-2">
+            Estoque
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.QtdEstoque)
+        </dd>
+    </dl>
+</div>
+<br/>
+ <div class="row">
+    <div class="col-md-2 form-group">
+        <a asp-action="Edit" asp-route-id="@Model?.Id"class="btn btn-primary">Editar</a>
+        <a asp-action="Index" class="btn btn-warning">Voltar</a>
+    </div>
+</div>
+@*<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>*@

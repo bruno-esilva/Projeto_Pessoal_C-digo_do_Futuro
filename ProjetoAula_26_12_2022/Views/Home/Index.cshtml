@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ProjetoAula_26_12_2022.Models.Produto>
+@using ProjetoAula_26_12_2022.Controllers;
+@{
+    ViewData["Title"] = "Home Page";
+}
+@{
+    var TotalEstoque = HomeController.SomarEstoque();
+    var ProdVencidos = HomeController.ProdVencidos();
+    var ProdVencendo = HomeController.VencTresDias();
+}
+
+<div class="row text-center">
+    <div class="col-sm-3 mb-3 mb-sm-0">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Total em Estoque</h5>
+                <hr />
+                <h4 class="card-text">@TotalEstoque</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Produtos Vencidos</h5>
+                <hr />
+                <h4 class="card-text">@ProdVencidos</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Produtos à Vencer</h5>
+                <hr />
+                <h4 class="card-text">@ProdVencendo</h4>
+            </div>
+        </div>
+    </div>
+</div>
